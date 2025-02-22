@@ -19,7 +19,6 @@ def load_data():
     df = pd.merge(df, geolocation_df[["geolocation_city", "geolocation_lat", "geolocation_lng"]], 
                   left_on="customer_city", right_on="geolocation_city", how="left")
     return df
-st.write("Memuat dataset utama...")
 all_data = load_data()
 
 st.sidebar.title("Navigasi")
