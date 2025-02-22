@@ -29,7 +29,7 @@ Sebelum menjalankan dashboard, pastikan Anda telah menginstal dependensi berikut
 Anda dapat menginstal semua dependensi dengan perintah berikut:
 ```bash
 pip install streamlit pandas matplotlib seaborn geopandas folium streamlit-folium geodatasets
-
+----
 ## Cara Menjalankan Dashboard
 Ikuti langkah-langkah berikut untuk menjalankan E-Commerce Dashboard dari repositori ini di komputer lokal Anda:
 ### Clone Repositori
