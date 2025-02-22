@@ -3,6 +3,7 @@
 Selamat datang di **E-Commerce Dashboard**! Dashboard ini dibuat menggunakan Streamlit untuk menganalisis data e-commerce, termasuk kategori produk terlaris, distribusi skor ulasan, analisis RFM, dan visualisasi geospasial. Dashboard ini memberikan wawasan mendalam tentang perilaku pelanggan dan performa penjualan.
 
 ## Fitur Dashboard
+
 Dashboard ini memiliki beberapa visualisasi yang dapat diakses melalui menu navigasi di sidebar:
 1. **Kategori Produk Terlaris**: Menampilkan 10 kategori produk dengan penjualan terbanyak.
 2. **Produk dengan Review Terbanyak**: Menampilkan 10 produk yang paling sering diulas.
@@ -12,6 +13,7 @@ Dashboard ini memiliki beberapa visualisasi yang dapat diakses melalui menu navi
 6. **Analisis Geospasial**: Menampilkan peta distribusi pesanan dengan heatmap dan penanda untuk kota tertentu (contoh: Sao Paulo).
 
 ## Prasyarat
+
 Sebelum menjalankan dashboard, pastikan Anda telah menginstal dependensi berikut:
 - Python 3.8 atau lebih baru
 - Library Python:
@@ -26,7 +28,7 @@ Sebelum menjalankan dashboard, pastikan Anda telah menginstal dependensi berikut
 
 Anda dapat menginstal semua dependensi dengan perintah berikut:
 ```bash
-pip install streamlit pandas matplotlib seaborn geopandas folium streamlit-folium geodatasets```
+pip install streamlit pandas matplotlib seaborn geopandas folium streamlit-folium geodatasets
 
 ## Cara Menjalankan Dashboard
 Ikuti langkah-langkah berikut untuk menjalankan E-Commerce Dashboard dari repositori ini di komputer lokal Anda:
