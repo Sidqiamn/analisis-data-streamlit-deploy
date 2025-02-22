@@ -67,13 +67,13 @@ def replace_customer_labels(df, column, top_n=5):
     return df, mapping
 
 if page == "Kategori Produk Terlaris":
-    st.header("10 Kategori Produk dengan Penjualan Terbanyak")
+    st.header("Kategori Produk dengan Penjualan Terbanyak")
     category_sales = filtered_df.groupby("product_category_name")["order_id"].count().reset_index()
     category_sales.columns = ["product_category_name", "total_sales"]
     category_sales = category_sales.sort_values(by="total_sales", ascending=False).head(10)
 
     fig = px.bar(category_sales, x="product_category_name", y="total_sales", 
-                 title="10 Kategori Produk dengan Penjualan Terbanyak",
+                 title="Kategori Produk dengan Penjualan Terbanyak",
                  color="product_category_name", color_discrete_sequence=px.colors.sequential.Viridis)
     fig.update_layout(xaxis_title="Kategori Produk", yaxis_title="Jumlah Penjualan", showlegend=False)
     st.plotly_chart(fig)

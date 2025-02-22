@@ -48,7 +48,7 @@ Unduh kode dari repositori GitHub dengan perintah berikut di terminal Anda:
 1. Navigasi Sidebar: Pilih visualisasi yang ingin dilihat dari menu dropdown di sidebar.
 2. Filter Data:
   - Gunakan filter "Tanggal Mulai" dan "Tanggal Selesai" untuk mempersempit data berdasarkan periode waktu.
-  - Gunakan filter "Pilih Kategori Produk" untuk menyaring berdasarkan kategori produk.
+  - Gunakan filter "Pilih Kategori Produk" untuk menyaring berdasarkan kategori produk. Pada awal tampilan memungkinkan hanya tampil satu produk karena perlu di filter.
   - Gunakan filter "Pilih State" untuk menyaring berdasarkan provinsi pelanggan.
 3. Interaktivitas: Semua grafik Plotly memungkinkan zoom, hover untuk detail, dan interaksi lainnya. Peta       geospasial menggunakan Folium untuk menampilkan heatmap dan penanda interaktif.
 4. Jika data tidak muncul atau ambigu dapat disesuaikan lagi tanggalnya.
