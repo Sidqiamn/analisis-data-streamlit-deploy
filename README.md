@@ -1,6 +1,6 @@
 # E-Commerce Dashboard
 
-Selamat datang di **E-Commerce Dashboard**! Dashboard ini dibuat menggunakan Streamlit untuk menganalisis data e-commerce, termasuk kategori produk terlaris, distribusi skor ulasan, analisis RFM, dan visualisasi geospasial. Dashboard ini memberikan wawasan mendalam tentang perilaku pelanggan dan performa penjualan.
+Selamat datang di **E-Commerce Dashboard**! Dashboard ini dibuat menggunakan Streamlit untuk menganalisis data e-commerce, termasuk kategori produk terlaris, distribusi skor ulasan, analisis RFM, dan visualisasi geospasial. Dashboard ini memberikan wawasan mendalam tentang perilaku pelanggan dan performa penjualan
 
 ## Fitur Dashboard
 
