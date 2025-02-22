@@ -14,12 +14,11 @@ st.title("E-Commerce Dashboard")
 def load_data():
     df = pd.read_csv("all_data.csv")
     df["order_date"] = pd.to_datetime(df["order_purchase_timestamp"])
-    geolocation_df = pd.read_csv("https://raw.githubusercontent.com/Sidqiamn/analisisdatadicoding/refs/heads/master/geolocation_dataset.csv")
+    geolocation_df = pd.read_csv("geo_dataset_fix.csv")
     geolocation_df = geolocation_df.drop_duplicates(subset=["geolocation_city"])
     df = pd.merge(df, geolocation_df[["geolocation_city", "geolocation_lat", "geolocation_lng"]], 
                   left_on="customer_city", right_on="geolocation_city", how="left")
     return df
-
 st.write("Memuat dataset utama...")
 all_data = load_data()
 
