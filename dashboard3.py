@@ -24,7 +24,6 @@ def load_data():
 
 all_data = load_data()
 
-# Sidebar untuk navigasi dan filtering
 st.sidebar.title("Navigasi dan Filter")
 page = st.sidebar.selectbox("Pilih Visualisasi", [
     "Kategori Produk Terlaris",
@@ -35,7 +34,6 @@ page = st.sidebar.selectbox("Pilih Visualisasi", [
     "Analisis Geospasial"
 ])
 
-# Filter Interaktif
 start_date = st.sidebar.date_input("Tanggal Mulai", min_value=all_data['order_date'].min().date(), 
                                   max_value=all_data['order_date'].max().date())
 end_date = st.sidebar.date_input("Tanggal Selesai", min_value=all_data['order_date'].min().date(), 
@@ -53,7 +51,6 @@ if 'customer_state' in all_data.columns:
 else:
     st.sidebar.warning("Kolom 'customer_state' tidak ditemukan.")
 
-# Filter Data
 filtered_df = all_data.copy()
 filtered_df = filtered_df[(filtered_df['order_date'].dt.date >= start_date) & 
                          (filtered_df['order_date'].dt.date <= end_date)]
@@ -135,7 +132,6 @@ elif page == "Analisis RFM":
     st.write("Top 5 Recency Values:")
     st.write(rfm_df.sort_values(by="recency").head(5))
 
-    # Visualisasi RFM menggunakan Plotly
     fig = px.bar(rfm_df.sort_values(by="recency").head(5), x="customer_id", y="recency", 
                  title="Top 5 Pelanggan Berdasarkan Recency",
                  color="recency", color_continuous_scale="Viridis")
