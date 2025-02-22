@@ -6,3 +6,4 @@ geopandas
 folium
 streamlit-folium
 geodatasets
+plotly
