@@ -9,8 +9,7 @@ from folium.plugins import HeatMap
 from streamlit_folium import st_folium
 import geodatasets
 
-st.title("E-Commerce Dashboard")
-st.write("Sidqi Amanullah")
+st.title("E-Commerce Dashboard Interaktif")
 
 @st.cache_data
 def load_data():
@@ -24,6 +23,7 @@ def load_data():
 
 all_data = load_data()
 
+# Sidebar untuk navigasi dan filtering
 st.sidebar.title("Navigasi dan Filter")
 page = st.sidebar.selectbox("Pilih Visualisasi", [
     "Kategori Produk Terlaris",
@@ -34,6 +34,7 @@ page = st.sidebar.selectbox("Pilih Visualisasi", [
     "Analisis Geospasial"
 ])
 
+# Filter Interaktif
 start_date = st.sidebar.date_input("Tanggal Mulai", min_value=all_data['order_date'].min().date(), 
                                   max_value=all_data['order_date'].max().date())
 end_date = st.sidebar.date_input("Tanggal Selesai", min_value=all_data['order_date'].min().date(), 
@@ -51,6 +52,7 @@ if 'customer_state' in all_data.columns:
 else:
     st.sidebar.warning("Kolom 'customer_state' tidak ditemukan.")
 
+# Filter Data
 filtered_df = all_data.copy()
 filtered_df = filtered_df[(filtered_df['order_date'].dt.date >= start_date) & 
                          (filtered_df['order_date'].dt.date <= end_date)]
@@ -68,13 +70,13 @@ def replace_customer_labels(df, column, top_n=5):
     return df, mapping
 
 if page == "Kategori Produk Terlaris":
-    st.header("Kategori Produk dengan Penjualan Terbanyak")
+    st.header("10 Kategori Produk dengan Penjualan Terbanyak")
     category_sales = filtered_df.groupby("product_category_name")["order_id"].count().reset_index()
     category_sales.columns = ["product_category_name", "total_sales"]
     category_sales = category_sales.sort_values(by="total_sales", ascending=False).head(10)
 
     fig = px.bar(category_sales, x="product_category_name", y="total_sales", 
-                 title="Kategori Produk dengan Penjualan Terbanyak",
+                 title="10 Kategori Produk dengan Penjualan Terbanyak",
                  color="product_category_name", color_discrete_sequence=px.colors.sequential.Viridis)
     fig.update_layout(xaxis_title="Kategori Produk", yaxis_title="Jumlah Penjualan", showlegend=False)
     st.plotly_chart(fig)
@@ -132,6 +134,7 @@ elif page == "Analisis RFM":
     st.write("Top 5 Recency Values:")
     st.write(rfm_df.sort_values(by="recency").head(5))
 
+    # Visualisasi RFM menggunakan Plotly
     fig = px.bar(rfm_df.sort_values(by="recency").head(5), x="customer_id", y="recency", 
                  title="Top 5 Pelanggan Berdasarkan Recency",
                  color="recency", color_continuous_scale="Viridis")
